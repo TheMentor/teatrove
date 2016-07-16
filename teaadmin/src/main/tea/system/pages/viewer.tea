@@ -51,7 +51,7 @@
             <div class="controls-wrapper">
                 <div role="label">Reset:</div>
                 <div id="button-reset" class="button">
-                    <a href="<% pathPrefix %>system/viewer/reset?reset=true&name=<% name %>&parent=<% parent %>">Source</a>
+                    <a href="<% pathPrefix %>/system/viewer/reset?reset=true&name=<% name %>&parent=<% parent %>">Source</a>
                 </div>
             </div>
         </div>
@@ -189,7 +189,7 @@
                                                     %>
                                                 ],
                                                 'ajax' : {
-                                                    'url' : '<% pathPrefix %>system/viewer/callers',
+                                                    'url' : '<% pathPrefix %>/system/viewer/callers',
                                                     'data' : function(node) {
                                                         return {
                                                             'method' : 'children',

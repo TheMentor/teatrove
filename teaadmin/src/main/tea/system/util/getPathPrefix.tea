@@ -22,19 +22,25 @@
     }
     */
     
+	hasContext = false
+	
     path = ''
     
     tmp = request.contextPath
     if (tmp != null and tmp.length > 0) {
         path = path & tmp
+		hasContext = true
     }
     
     tmp = request.servletPath;
     if (tmp != null and tmp.length > 0) {
         path = path & tmp
+		hasContext = true
     }
     
-    path = path & '/';
+	if (hasContext) {
+		path = path & '/';
+	}
 
     // return path prefix string
     path

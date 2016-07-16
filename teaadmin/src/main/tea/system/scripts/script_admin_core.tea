@@ -46,7 +46,7 @@
             }
             else {
                 text = 'The server reported error ' + xhr.status + '.'
-                image = '<% pathPrefix %>system/assets/images/notification-incorrect.png';
+                image = '<% pathPrefix %>/system/assets/images/notification-incorrect.png';
             }
             
             ajaxId = $.gritter.add({
@@ -646,7 +646,7 @@
                 var id = href.substring(nidx + 6);
                 var parent = href.substring(pidx + 8, nidx) 
                 $('#caller-lines').slideUp('fast', function() {
-                    $('#caller-lines').load('<% pathPrefix %>system/viewer/callerlines?id=' + parent + '&caller=' + id, function() {
+                    $('#caller-lines').load('<% pathPrefix %>/system/viewer/callerlines?id=' + parent + '&caller=' + id, function() {
                         setupTitles('caller-lines');
                         $('#caller-lines').slideDown('fast');
                     });
@@ -1235,16 +1235,16 @@
                     var title = "Compile: " + buttonText;
 
                     var msg = 'No changes detected';
-                    var img = '<% pathPrefix %>system/assets/images/notification-info.png';
+                    var img = '<% pathPrefix %>/system/assets/images/notification-info.png';
 
                     if ( $(data).closest('.sml-e').length > 0 ) {
 
-                        img = '<% pathPrefix %>system/assets/images/notification-incorrect.png';
+                        img = '<% pathPrefix %>/system/assets/images/notification-incorrect.png';
                         msg = 'Encountered errors.<br/>[<a href="?page=compile" style="color: red !important; text-decoration: underline;">Try again</a>]';
 
                     } else if ( $(data).closest('.sml-c').length > 0 ) {
 
-                        img = '<% pathPrefix %>system/assets/images/notification-correct.png';
+                        img = '<% pathPrefix %>/system/assets/images/notification-correct.png';
                         msg = 'Successful';
 
                     }
@@ -1305,23 +1305,23 @@
 								name = name.substring(index+1);
 							}
 							var msg = 'No changes detected.';
-							var img = '<% pathPrefix %>system/assets/images/notification-info.png';
+							var img = '<% pathPrefix %>/system/assets/images/notification-info.png';
 
 							if ( $(data).closest('.sml-issues.sml-e').length > 0 ) {
 
-								img = '<% pathPrefix %>system/assets/images/notification-incorrect.png';
+								img = '<% pathPrefix %>/system/assets/images/notification-incorrect.png';
 								msg = 'Template contains errors.<br/>[<a href="?page=compile" style="color: red !important; text-decoration: underline;">Try again</a>]';
 
 							}
 							else if ( $(data).closest('.sml-issues.sml-w').length > 0 ) {
 
-                                img = '<% pathPrefix %>system/assets/images/notification-correct.png';
+                                img = '<% pathPrefix %>/system/assets/images/notification-correct.png';
                                 msg = 'Template compiled successfully with warnings';
 
                             }
                             else if ( $(data).closest('.sml-c').length > 0 ) {
 
-								img = '<% pathPrefix %>system/assets/images/notification-correct.png';
+								img = '<% pathPrefix %>/system/assets/images/notification-correct.png';
 								msg = 'Template compiled successfully!';
 
 							}
@@ -1346,7 +1346,7 @@
 									name = name.substring(index+1);
 								}
 								var msg = 'Template stats were reset.';
-								var img = '<% pathPrefix %>system/assets/images/notification-correct.png';
+								var img = '<% pathPrefix %>/system/assets/images/notification-correct.png';
 
 								$.gritter.add({
 									// (string | mandatory) the heading of the notification
@@ -1444,7 +1444,7 @@
             timer : null,
             refresh : function(callback) {
                 getLoadingIndicator().show();
-                $.get('<% pathPrefix %>system/remote/jmx', function(json) {
+                $.get('<% pathPrefix %>/system/remote/jmx', function(json) {
                     for (var i = 0; i < $.system.listeners.length; i++) {
                         var listener = $.system.listeners[i];
                         listener.callback(json);
@@ -2570,23 +2570,23 @@
                                 name = name.substring(index+1);
                             }
                             var msg = 'No changes detected.';
-                            var img = '<% pathPrefix %>system/assets/images/notification-info.png';
+                            var img = '<% pathPrefix %>/system/assets/images/notification-info.png';
 
                             if ( $(data).closest('.sml-issues.sml-e').length > 0 ) {
 
-                                img = '<% pathPrefix %>system/assets/images/notification-incorrect.png';
+                                img = '<% pathPrefix %>/system/assets/images/notification-incorrect.png';
                                 msg = 'Template contains errors.<br/>[<a href="?page=compile" style="color: red !important; text-decoration: underline;">Try again</a>]';
 
                             }
                             else if ( $(data).closest('.sml-issues.sml-w').length > 0 ) {
 
-                                img = '<% pathPrefix %>system/assets/images/notification-correct.png';
+                                img = '<% pathPrefix %>/system/assets/images/notification-correct.png';
                                 msg = 'Template compiled successfully with warnings';
 
                             }
                             else if ( $(data).closest('.sml-c').length > 0 ) {
 
-                                img = '<% pathPrefix %>system/assets/images/notification-correct.png';
+                                img = '<% pathPrefix %>/system/assets/images/notification-correct.png';
                                 msg = 'Template compiled successfully!';
 
                             }
@@ -2611,7 +2611,7 @@
                                     name = name.substring(index+1);
                                 }
                                 var msg = 'Template stats were reset.';
-                                var img = '<% pathPrefix %>system/assets/images/notification-correct.png';
+                                var img = '<% pathPrefix %>/system/assets/images/notification-correct.png';
 
                                 $.gritter.add({
                                     // (string | mandatory) the heading of the notification

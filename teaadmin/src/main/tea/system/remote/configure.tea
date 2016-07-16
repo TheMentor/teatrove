@@ -21,8 +21,8 @@ if (tenuredCollector) { setTenuredCollector(tenuredCollector) }
 
 pathPrefix = call system.util.getPathPrefix();
 if (saveJMXSettings()) {
-    sendRedirect(pathPrefix & 'system/console?page=system_information&tab=memory');
+    sendRedirect(pathPrefix & '/system/console?page=system_information&tab=memory');
 }
 else {
-    sendRedirect(pathPrefix & 'system/console?page=system_information&tab=memory&configure=true');
+    sendRedirect(pathPrefix & '/system/console?page=system_information&tab=memory&configure=true');
 }
