@@ -202,28 +202,33 @@
             </executions>
         </plugin>
 
-		<!--
         <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>rmic-maven-plugin</artifactId>
-        <version>1.1</version>
-        <executions>
-          <execution>
-            <id>rmic-process-classes</id>
-            <goals>
-              <goal>rmic</goal>
-            </goals>
-            <configuration>
-              <includes>
-                  <include>org.teatrove.teaservlet.util.cluster.ClusterHook</include>
-                  <include>org.teatrove.teaservlet.util.cluster.TeaServletClusterHook</include>
-                  <include>org.teatrove.teaservlet.RegionCachingApplication$ClusterCacheInfoImpl</include>
-              </includes>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-	  -->
+			<groupId>org.codehaus.mojo</groupId>
+			<artifactId>rmic-maven-plugin</artifactId>
+			<version>1.3</version>
+			<executions>
+				<execution>
+				<id>rmic-process-classes</id>
+				<goals>
+					<goal>rmic</goal>
+				</goals>
+				<configuration>
+				  <includes>
+					  <include>org.teatrove.teaservlet.util.cluster.ClusterHook</include>
+					  <include>org.teatrove.teaservlet.util.cluster.TeaServletClusterHook</include>
+					  <include>org.teatrove.teaservlet.RegionCachingApplication$ClusterCacheInfoImpl</include>
+				  </includes>
+				</configuration>
+            </execution>
+			</executions>
+			<dependencies>
+			  <dependency>
+				  <groupId>org.glassfish.corba</groupId>
+				  <artifactId>rmic</artifactId>
+				  <version>4.0.2-b007</version>
+			  </dependency>
+			</dependencies>		
+		</plugin>
 
     </plugins>
 
