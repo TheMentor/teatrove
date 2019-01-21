@@ -1747,19 +1747,21 @@
                 if (typeof json.memory.heap !== 'undefined') {
                     var usedHeapMemory = json.memory.heap.used / 1024 / 1024;
                     var maxHeapMemory = json.memory.heap.max / 1024 / 1024;
-                    var freeHeapMemory = maxHeapMemory - usedHeapMemory;
+					var usedNonHeapMemory = json.memory.nonheap.used / 1024 / 1024;
+                    var freeHeapMemory = maxHeapMemory - usedHeapMemory - usedNonHeapMemory;
                     $freeHeapMemory.text(freeHeapMemory.toFixed(0));
                     $usedHeapMemory.text(usedHeapMemory.toFixed(0));
                     $totalHeapMemory.text(maxHeapMemory.toFixed(0));
                 }
                 
                 if (typeof json.memory.nonheap !== 'undefined') {
+				    var maxHeapMemory = json.memory.heap.max / 1024 / 1024;
+					var usedHeapMemory = json.memory.heap.used / 1024 / 1024;
                     var usedNonHeapMemory = json.memory.nonheap.used / 1024 / 1024;
-                    var maxNonHeapMemory = json.memory.nonheap.max / 1024 / 1024;
-                    var freeNonHeapMemory = maxNonHeapMemory - usedNonHeapMemory;
+                    var freeNonHeapMemory = maxHeapMemory - usedHeapMemory - usedNonHeapMemory;
                     $freeNonHeapMemory.text(freeNonHeapMemory.toFixed(0));
                     $usedNonHeapMemory.text(usedNonHeapMemory.toFixed(0));
-                    $totalNonHeapMemory.text(maxNonHeapMemory.toFixed(0));
+                    $totalNonHeapMemory.text(maxHeapMemory.toFixed(0));
                 }
             }
         });

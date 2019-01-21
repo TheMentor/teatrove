@@ -44,7 +44,7 @@
                     numberFormat("0");
                 %>
                 
-                <% freeMemory = (memoryMXBean.heapMemoryUsage.max - memoryMXBean.heapMemoryUsage.used) / unitDividend; %>
+                <% freeMemory = (memoryMXBean.heapMemoryUsage.max - memoryMXBean.heapMemoryUsage.used - memoryMXBean.nonHeapMemoryUsage.used) / unitDividend; %>
                 <div class="metric">
                     <div id="freeHeapMemory">
                         <div class="value"><span class="number"><% freeMemory %></span> <% unitLabel %></div>
@@ -70,9 +70,9 @@
                 
                 <div class="separator">&nbsp;</div>
                 
-                <% freeMemory = (memoryMXBean.nonHeapMemoryUsage.max - memoryMXBean.nonHeapMemoryUsage.used) / unitDividend; %>
+                <% freeMemory = (memoryMXBean.heapMemoryUsage.max - memoryMXBean.heapMemoryUsage.used - memoryMXBean.nonHeapMemoryUsage.used) / unitDividend; %>
                 <div class="metric">
-                    <div id="freeNonHeapMemory">
+                    <div id="freeNonHeapMemory" style="display:none;">
                         <div class="value"><span class="number"><% freeMemory %></span> <% unitLabel %></div>
                         <div class="label">Free Non-Heap Memory</div>
                     </div>
@@ -86,9 +86,9 @@
                     </div>
                 </div>
                 
-                <% totalMemory = memoryMXBean.nonHeapMemoryUsage.max / unitDividend; %>
+                <% totalMemory = memoryMXBean.heapMemoryUsage.max / unitDividend; %>
                 <div class="metric">
-                    <div id="totalNonHeapMemory">
+                    <div id="totalNonHeapMemory" style="display:none;">
                         <div class="value"><span class="number"><% totalMemory %></span> <% unitLabel %></div>
                         <div class="label">Total Non-Heap Memory</div>
                     </div>

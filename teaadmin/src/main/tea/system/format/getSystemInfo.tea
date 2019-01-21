@@ -241,14 +241,6 @@ pathSeparator = System.getProperty('path.separator', ':')
                 </thead>
                 <tbody>
                     <tr class="oddrow">
-                        <td>Boot Class Path</td>
-                        <td><% replace(runtimeMXBean.bootClassPath, pathSeparator, '<br />') %></td>
-                    </tr>
-                    <tr class="evenrow">
-                        <td>Boot Class Path Supported</td>
-                        <td><% runtimeMXBean.bootClassPathSupported %></td>
-                    </tr>
-                    <tr class="oddrow">
                         <td>Class Path</td>
                         <td><% replace(runtimeMXBean.classPath, pathSeparator, '<br />') %></td>
                     </tr>
